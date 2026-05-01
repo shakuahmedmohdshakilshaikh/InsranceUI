@@ -10,7 +10,7 @@ import { MaterialModule } from '../../../Material.Module';
 })
 export class Sidebar {
       // role = localStorage.getItem('role') || 'User';
-   role = 'Agent'; // change manually for testing User,Agent
+   role = 'Admin'; // change manually for testing User,Agent,Admin
   adminOpen = true;
   agentOpen = true;
   userOpen = true;
