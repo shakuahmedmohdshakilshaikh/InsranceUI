@@ -1,0 +1,24 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  display: flex;
+  flex: 1;
+  margin-top: 64px; /* Adjust based on header height */
+}
+
+app-sidebar {
+  width: 250px;
+  background: #f5f5f5;
+  overflow-y: auto;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #fff;
+}

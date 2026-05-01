@@ -1,1 +1,74 @@
-<p>payment-history works!</p>
+<h2>Payment History</h2>
+
+<p *ngIf="loading" class="loading-text">Loading...</p>
+<p *ngIf="errorMessage" class="error-text">{{ errorMessage }}</p>
+
+<div *ngIf="!loading && dataSource.data.length > 0" class="payment-container">
+  
+  <!-- Search Filter -->
+  <mat-form-field class="search-field">
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search by customer, policy, etc...">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <!-- Data Table with Pagination -->
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      
+      <!-- Payment ID Column -->
+      <ng-container matColumnDef="paymentId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Payment ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.paymentId }}</td>
+      </ng-container>
+
+      <!-- Policy Number Column -->
+      <ng-container matColumnDef="policyNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Policy Number</th>
+        <td mat-cell *matCellDef="let element">{{ element.policyNumber }}</td>
+      </ng-container>
+
+      <!-- Policy Type Column -->
+      <ng-container matColumnDef="policyTypeName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Policy Type</th>
+        <td mat-cell *matCellDef="let element">{{ element.policyTypeName }}</td>
+      </ng-container>
+
+      <!-- Customer Name Column -->
+      <ng-container matColumnDef="customerName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.customerName }}</td>
+      </ng-container>
+
+      <!-- Premium Schedule ID Column -->
+      <ng-container matColumnDef="premiumScheduleId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Premium Schedule ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.premiumScheduleId }}</td>
+      </ng-container>
+
+      <!-- Amount Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+        <td mat-cell *matCellDef="let element">₹{{ element.amount }}</td>
+      </ng-container>
+
+      <!-- Payment Mode Column -->
+      <ng-container matColumnDef="paymentMode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Payment Mode</th>
+        <td mat-cell *matCellDef="let element">{{ element.paymentMode }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <mat-paginator 
+    [pageSizeOptions]="[5, 10, 25, 50]" 
+    showFirstLastButtons 
+    aria-label="Select page">
+  </mat-paginator>
+</div>
+
+<p *ngIf="!loading && dataSource.data.length === 0 && !errorMessage" class="no-data-text">No payment history found</p>

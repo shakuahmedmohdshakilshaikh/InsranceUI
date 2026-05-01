@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { Login } from './components/auth/login/login';
-import { MainLayout } from './components/layout/main-layout/main-layout';
 import { MangeRoles } from './components/pages/admin/mange-roles/mange-roles';
 import { ManageCustomers } from './components/pages/admin/manage-customers/manage-customers';
 import { ManagePolicyTypes } from './components/pages/admin/manage-policy-types/manage-policy-types';
@@ -20,33 +19,27 @@ import { ManagePolicies } from './components/pages/admin/manage-policies/manage-
 
 export const routes: Routes = [
 
-  { path: 'login', component: Login }, // ✅ enable this
+  { path: 'login', component: Login },
 
-  {
-  path: '',
-  component: MainLayout,
-  children: [
-    // { path: 'dashboard', component:  },
+  { path: 'dashboard', component: MangeRoles },
 
-    { path: 'admin/roles', component: MangeRoles },
-    { path: 'admin/customers', component: ManageCustomers },
-    { path: 'admin/policy-types', component: ManagePolicyTypes },
-    { path: 'admin/policies', component: ManagePolicies },
-    { path: 'admin/cash-verification', component: CashVerifcation },
-    { path: 'admin/payment-history', component: paymentHistoryAdmin },
-    { path: 'admin/premium-history', component: preiumHistoryAdmin },
+  { path: 'admin/roles', component: MangeRoles },
+  { path: 'admin/customers', component: ManageCustomers },
+  { path: 'admin/policy-types', component: ManagePolicyTypes },
+  { path: 'admin/policies', component: ManagePolicies },
+  { path: 'admin/cash-verification', component: CashVerifcation },
+  { path: 'admin/payment-history', component: paymentHistoryAdmin },
+  { path: 'admin/premium-history', component: preiumHistoryAdmin },
 
-    { path: 'agent/customers', component: CustomerList },
-    { path: 'agent/policies', component: PolicyList },
-    { path: 'agent/collect-cash', component: CollectCashPayment },
+  { path: 'agent/customers', component: CustomerList },
+  { path: 'agent/policies', component: PolicyList },
+  { path: 'agent/collect-cash', component: CollectCashPayment },
 
-    { path: 'user/profile', component: MyProfile },
-    { path: 'user/policies', component: MyPolicies },
-    { path: 'user/premium-history', component: PremiumHistory },
-    { path: 'user/payment-history', component: PaymentHistory },
-    { path: 'user/razorpay-payment', component: RazorpayPayment },
+  { path: 'user/profile', component: MyProfile },
+  { path: 'user/policies', component: MyPolicies },
+  { path: 'user/premium-history', component: PremiumHistory },
+  { path: 'user/payment-history', component: PaymentHistory },
+  { path: 'user/razorpay-payment', component: RazorpayPayment },
 
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
-  ]
-}
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];

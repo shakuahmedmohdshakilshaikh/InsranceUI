@@ -1,0 +1,65 @@
+.page {
+  padding: 20px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.page-header p {
+  margin: 4px 0 0;
+  color: #64748b;
+}
+
+.card {
+  padding: 18px;
+  border-radius: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  font-weight: 600;
+  background: #f1f5f9;
+}
+
+.status {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.reject-btn {
+  margin-left: 8px;
+}
+
+.loading,
+.empty {
+  padding: 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+.error {
+  padding: 12px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}

@@ -1,0 +1,137 @@
+.page {
+  padding: 22px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.page-header p {
+  margin: 4px 0 0;
+  color: #64748b;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.summary-card {
+  padding: 18px;
+  border-radius: 16px;
+}
+
+.summary-card span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.summary-card h3 {
+  margin: 8px 0 0;
+  font-size: 26px;
+}
+
+.success-card h3 {
+  color: #15803d;
+}
+
+.pending-card h3 {
+  color: #b45309;
+}
+
+.filter-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+}
+
+.filter-card mat-form-field {
+  width: 230px;
+}
+
+.table-card {
+  padding: 18px;
+  border-radius: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background: #f1f5f9;
+  font-weight: 700;
+}
+
+td,
+th {
+  padding: 12px;
+}
+
+.main-text {
+  font-weight: 600;
+}
+
+.sub-text {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+.status,
+.mode {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.mode {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.rejected,
+.failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.loading,
+.empty {
+  padding: 22px;
+  text-align: center;
+  color: #64748b;
+}
+
+.error {
+  padding: 12px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
