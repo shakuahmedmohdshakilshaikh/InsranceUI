@@ -1,0 +1,45 @@
+mat-nav-list {
+  padding: 14px 10px;
+}
+
+a {
+  color: #111827 !important;
+  font-size: 15px;
+  border-radius: 22px;
+  margin-bottom: 8px;
+}
+
+mat-icon {
+  color: #5cc8ff;
+  margin-right: 10px;
+}
+
+.active {
+  background: #d8d8dd !important;
+  color: #000 !important;
+}
+
+.menu-title {
+  width: 100%;
+  justify-content: flex-start;
+  color: #111827;
+  font-size: 15px;
+  margin: 8px 0;
+}
+
+.menu-title mat-icon {
+  margin-right: 10px;
+}
+
+.arrow {
+  margin-left: auto;
+}
+
+.submenu {
+  margin-left: 18px;
+}
+
+.submenu a {
+  font-size: 14px;
+  padding-left: 12px;
+}

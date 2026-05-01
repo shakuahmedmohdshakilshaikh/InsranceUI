@@ -1,0 +1,82 @@
+<!-- <mat-nav-list>
+
+  <a mat-list-item routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>dashboard</mat-icon>
+    <span>Dashboard</span>
+  </a>
+
+  <a mat-list-item routerLink="/policies" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>description</mat-icon>
+    <span>Policies</span>
+  </a>
+
+  <a mat-list-item routerLink="/premium" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>schedule</mat-icon>
+    <span>Premium</span>
+  </a>
+
+  <a mat-list-item routerLink="/payment" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>payment</mat-icon>
+    <span>Payment</span>
+  </a>
+
+</mat-nav-list> -->
+<mat-nav-list>
+
+  <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
+    <mat-icon>dashboard</mat-icon>
+    <span>Dashboard</span>
+  </a>
+
+  <!-- ADMIN -->
+  <div *ngIf="role === 'Admin'">
+    <button mat-button class="menu-title" (click)="adminOpen = !adminOpen">
+      <mat-icon>admin_panel_settings</mat-icon>
+      <span>Admin</span>
+      <mat-icon class="arrow">{{ adminOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+    </button>
+
+    <div *ngIf="adminOpen" class="submenu">
+      <a mat-list-item routerLink="/admin/roles" routerLinkActive="active">Manage Roles</a>
+      <a mat-list-item routerLink="/admin/customers" routerLinkActive="active">Manage Customers</a>
+      <a mat-list-item routerLink="/admin/policy-types" routerLinkActive="active">Manage Policy Types</a>
+      <a mat-list-item routerLink="/admin/policies" routerLinkActive="active">Manage Policies</a>
+      <a mat-list-item routerLink="/admin/cash-verification" routerLinkActive="active">Cash Verification</a>
+      <a mat-list-item routerLink="/admin/payment-history" routerLinkActive="active">Payment History</a>
+      <a mat-list-item routerLink="/admin/premium-history" routerLinkActive="active">Premium History</a>
+    </div>
+  </div>
+
+  <!-- AGENT -->
+  <div *ngIf="role === 'Agent'">
+    <button mat-button class="menu-title" (click)="agentOpen = !agentOpen">
+      <mat-icon>support_agent</mat-icon>
+      <span>Agent</span>
+      <mat-icon class="arrow">{{ agentOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+    </button>
+
+    <div *ngIf="agentOpen" class="submenu">
+      <a mat-list-item routerLink="/agent/customers" routerLinkActive="active">Customer List</a>
+      <a mat-list-item routerLink="/agent/policies" routerLinkActive="active">Policy List</a>
+      <a mat-list-item routerLink="/agent/collect-cash" routerLinkActive="active">Collect Cash Payment</a>
+    </div>
+  </div>
+
+  <!-- USER -->
+  <div *ngIf="role === 'User'">
+    <button mat-button class="menu-title" (click)="userOpen = !userOpen">
+      <mat-icon>person</mat-icon>
+      <span>User</span>
+      <mat-icon class="arrow">{{ userOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+    </button>
+
+    <div *ngIf="userOpen" class="submenu">
+      <a mat-list-item routerLink="/user/profile" routerLinkActive="active">My Profile</a>
+      <a mat-list-item routerLink="/user/policies" routerLinkActive="active">My Policies</a>
+      <a mat-list-item routerLink="/user/premium-history" routerLinkActive="active">Premium History</a>
+      <a mat-list-item routerLink="/user/payment-history" routerLinkActive="active">Payment History</a>
+      <a mat-list-item routerLink="/user/razorpay-payment" routerLinkActive="active">Razorpay Payment</a>
+    </div>
+  </div>
+
+</mat-nav-list>

@@ -1,0 +1,15 @@
+.container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+//   background: linear-gradient(180deg, #112d58 0%, #0f172a 60%, #111e3f 100%);
+  color: #f8fafc;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.content {
+  padding: 20px;
+}
